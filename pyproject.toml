@@ -1,0 +1,13 @@
+[project]
+name = "analyzelite"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.15.0",
+    "num2words>=0.5.14",
+    "opencv-python>=5.0.0.93",
+    "pillow>=13.0.0",
+    "torch==2.8.*",  # last torch with MPS (Apple GPU) on macOS 13; unpin after upgrading to macOS 14+
+    "torchvision==0.23.*",  # matches torch 2.8
+    "transformers>=5.22.2",
+]
