@@ -7,6 +7,12 @@ import numpy as np
 import torch
 
 from infer import sample_uniform
+from run_eval import score
+
+assert score("The wallet, then the can.", "can|wallet") == "wallet"  # first mention wins
+assert score("B)", "a|b") == "b"
+assert score("Two.", "1|2|3") == "2"
+assert score("I am not sure.", "yes|no") == ""
 
 with tempfile.TemporaryDirectory() as d:
     path = os.path.join(d, "count.mp4")

@@ -43,6 +43,24 @@ def sample_uniform(path, n):
     return np.stack(frames), meta
 
 
+def load():
+    processor = AutoProcessor.from_pretrained(MODEL)
+    return AutoModelForImageTextToText.from_pretrained(MODEL, dtype=DTYPE).to(DEVICE), processor
+
+
+def ask(model, processor, path, question, n):
+    """Return the answer, the sampled frames' metadata, sampling seconds and end-to-end seconds."""
+    t0 = time.perf_counter()
+    video, meta = sample_uniform(path, n)
+    t1 = time.perf_counter()
+    messages = [{"role": "user", "content": [{"type": "video"}, {"type": "text", "text": question}]}]
+    prompt = processor.apply_chat_template(messages, add_generation_prompt=True)
+    inputs = processor(text=prompt, videos=[[video]], video_metadata=[meta], return_tensors="pt").to(DEVICE, dtype=DTYPE)
+    out = model.generate(**inputs, do_sample=False, max_new_tokens=64)
+    answer = processor.batch_decode(out[:, inputs["input_ids"].shape[1] :], skip_special_tokens=True)[0].strip()
+    return answer, meta, t1 - t0, time.perf_counter() - t0
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("video")
@@ -50,18 +68,8 @@ def main():
     p.add_argument("--frames", type=int, default=8)
     args = p.parse_args()
 
-    processor = AutoProcessor.from_pretrained(MODEL)
-    model = AutoModelForImageTextToText.from_pretrained(MODEL, dtype=DTYPE).to(DEVICE)
-
-    t0 = time.perf_counter()
-    video, meta = sample_uniform(args.video, args.frames)
-    t1 = time.perf_counter()
-    messages = [{"role": "user", "content": [{"type": "video"}, {"type": "text", "text": args.question}]}]
-    prompt = processor.apply_chat_template(messages, add_generation_prompt=True)
-    inputs = processor(text=prompt, videos=[[video]], video_metadata=[meta], return_tensors="pt").to(DEVICE, dtype=DTYPE)
-    out = model.generate(**inputs, do_sample=False, max_new_tokens=64)
-    answer = processor.batch_decode(out[:, inputs["input_ids"].shape[1] :], skip_special_tokens=True)[0].strip()
-    t2 = time.perf_counter()
+    model, processor = load()
+    answer, meta, t_sample, t_total = ask(model, processor, args.video, args.question, args.frames)
 
     print(answer)
     print(f"{len(meta.timestamps)} frames at {' '.join(f'{s:.1f}s' for s in meta.timestamps)}")
@@ -69,7 +77,7 @@ def main():
     # Poll it from a thread during generate if the numbers look off.
     mps_gb = torch.mps.driver_allocated_memory() / 2**30
     rss_gb = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 2**30  # bytes on macOS
-    print(f"end-to-end {t2 - t0:.2f}s (sampling {t1 - t0:.2f}s) | MPS mem {mps_gb:.2f} GB | peak RSS {rss_gb:.2f} GB")
+    print(f"end-to-end {t_total:.2f}s (sampling {t_sample:.2f}s) | MPS mem {mps_gb:.2f} GB | peak RSS {rss_gb:.2f} GB")
 
 
 if __name__ == "__main__":

@@ -1,2 +1,5 @@
 .venv/
 __pycache__/
+*.mov
+*.MOV
+*.mp4

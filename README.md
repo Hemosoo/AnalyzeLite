@@ -14,6 +14,14 @@ uv run infer.py path/to/clip.mov "Was the drawer opened and then closed? Answer 
 
 It prints the answer, the timestamps of the sampled frames, and end-to-end latency (including frame sampling) plus memory.
 
+## Evaluate
+
+```
+uv run run_eval.py ~/Downloads experiments/results.csv --frames 4 8 16
+```
+
+This asks every question in `questions.csv` about its clip, scores the answers against the ground truth, and logs latency and memory for each. Results so far are in `experiments/`.
+
 ## Test
 
 ```

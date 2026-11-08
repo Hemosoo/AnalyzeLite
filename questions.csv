@@ -1,0 +1,130 @@
+clip,type,question,choices,answer
+IMG_6524.MOV,presence,Is there a can in the video? Answer yes or no.,yes|no,yes
+IMG_6524.MOV,presence,Is there a wallet in the video? Answer yes or no.,yes|no,yes
+IMG_6524.MOV,presence,Is there a banana in the video? Answer yes or no.,yes|no,no
+IMG_6524.MOV,action,Did I pick up the wallet? Answer yes or no.,yes|no,yes
+IMG_6524.MOV,action,Did I pick up the can? Answer yes or no.,yes|no,yes
+IMG_6524.MOV,action,Did I pick up the keyboard? Answer yes or no.,yes|no,no
+IMG_6524.MOV,count,How many objects did I pick up? Answer with a number.,1|2|3,2
+IMG_6524.MOV,order_letter,Which object did I pick up first? A) wallet B) can. Answer with the letter.,a|b,a
+IMG_6524.MOV,order_letter,Which object did I pick up first? A) can B) wallet. Answer with the letter.,a|b,b
+IMG_6524.MOV,order_named,"Which object did I pick up first, the wallet or the can?",wallet|can,wallet
+IMG_6524.MOV,order_named,"Which object did I pick up first, the can or the wallet?",can|wallet,wallet
+IMG_6524.MOV,order_open,What object did I pick up first? Answer with one word.,wallet|can,wallet
+IMG_6524.MOV,order_open,What object did I pick up last? Answer with one word.,wallet|can,can
+IMG_6525.MOV,presence,Is there a can in the video? Answer yes or no.,yes|no,yes
+IMG_6525.MOV,presence,Is there a wallet in the video? Answer yes or no.,yes|no,yes
+IMG_6525.MOV,presence,Is there a banana in the video? Answer yes or no.,yes|no,no
+IMG_6525.MOV,action,Did I pick up the wallet? Answer yes or no.,yes|no,yes
+IMG_6525.MOV,action,Did I pick up the can? Answer yes or no.,yes|no,no
+IMG_6525.MOV,action,Did I pick up the keyboard? Answer yes or no.,yes|no,no
+IMG_6525.MOV,count,How many objects did I pick up? Answer with a number.,1|2|3,1
+IMG_6525.MOV,order_letter,Which object did I pick up first? A) wallet B) can. Answer with the letter.,a|b,a
+IMG_6525.MOV,order_letter,Which object did I pick up first? A) can B) wallet. Answer with the letter.,a|b,b
+IMG_6525.MOV,order_named,"Which object did I pick up first, the wallet or the can?",wallet|can,wallet
+IMG_6525.MOV,order_named,"Which object did I pick up first, the can or the wallet?",can|wallet,wallet
+IMG_6525.MOV,order_open,What object did I pick up first? Answer with one word.,wallet|can,wallet
+IMG_6525.MOV,order_open,What object did I pick up last? Answer with one word.,wallet|can,wallet
+IMG_6526.MOV,presence,Is there a can in the video? Answer yes or no.,yes|no,yes
+IMG_6526.MOV,presence,Is there a wallet in the video? Answer yes or no.,yes|no,yes
+IMG_6526.MOV,presence,Is there a banana in the video? Answer yes or no.,yes|no,no
+IMG_6526.MOV,action,Did I pick up the wallet? Answer yes or no.,yes|no,yes
+IMG_6526.MOV,action,Did I pick up the can? Answer yes or no.,yes|no,yes
+IMG_6526.MOV,action,Did I pick up the keyboard? Answer yes or no.,yes|no,no
+IMG_6526.MOV,count,How many objects did I pick up? Answer with a number.,1|2|3,2
+IMG_6526.MOV,order_letter,Which object did I pick up first? A) wallet B) can. Answer with the letter.,a|b,b
+IMG_6526.MOV,order_letter,Which object did I pick up first? A) can B) wallet. Answer with the letter.,a|b,a
+IMG_6526.MOV,order_named,"Which object did I pick up first, the wallet or the can?",wallet|can,can
+IMG_6526.MOV,order_named,"Which object did I pick up first, the can or the wallet?",can|wallet,can
+IMG_6526.MOV,order_open,What object did I pick up first? Answer with one word.,wallet|can,can
+IMG_6526.MOV,order_open,What object did I pick up last? Answer with one word.,wallet|can,wallet
+IMG_6522.MOV,presence,Is there a can in the video? Answer yes or no.,yes|no,yes
+IMG_6522.MOV,presence,Is there a wallet in the video? Answer yes or no.,yes|no,no
+IMG_6522.MOV,presence,Is there a banana in the video? Answer yes or no.,yes|no,no
+IMG_6522.MOV,action,Did I pick up the wallet? Answer yes or no.,yes|no,no
+IMG_6522.MOV,action,Did I pick up the can? Answer yes or no.,yes|no,yes
+IMG_6522.MOV,action,Did I pick up the keyboard? Answer yes or no.,yes|no,no
+IMG_6522.MOV,count,How many objects did I pick up? Answer with a number.,1|2|3,1
+IMG_6522.MOV,order_letter,Which object did I pick up first? A) wallet B) can. Answer with the letter.,a|b,b
+IMG_6522.MOV,order_letter,Which object did I pick up first? A) can B) wallet. Answer with the letter.,a|b,a
+IMG_6522.MOV,order_named,"Which object did I pick up first, the wallet or the can?",wallet|can,can
+IMG_6522.MOV,order_named,"Which object did I pick up first, the can or the wallet?",can|wallet,can
+IMG_6522.MOV,order_open,What object did I pick up first? Answer with one word.,wallet|can,can
+IMG_6522.MOV,order_open,What object did I pick up last? Answer with one word.,wallet|can,can
+IMG_0744.MOV,action,Does the person give a thumbs up? Answer yes or no.,yes|no,yes
+IMG_0744.MOV,action,Does the person show a peace sign? Answer yes or no.,yes|no,yes
+IMG_0744.MOV,action,Does the person give a thumbs down? Answer yes or no.,yes|no,yes
+IMG_0744.MOV,action,Does the person show an open palm? Answer yes or no.,yes|no,yes
+IMG_0744.MOV,action,Does the person point at the camera? Answer yes or no.,yes|no,no
+IMG_0744.MOV,action,Does the person clap their hands? Answer yes or no.,yes|no,no
+IMG_0744.MOV,count,How many different hand gestures does the person make? Answer with a number.,1|2|3|4|5|6,4
+IMG_0744.MOV,order_letter,Which gesture does the person make first? A) thumbs up B) peace sign C) thumbs down D) open palm. Answer with the letter.,a|b|c|d,a
+IMG_0744.MOV,order_letter,Which gesture does the person make first? A) open palm B) thumbs down C) peace sign D) thumbs up. Answer with the letter.,a|b|c|d,d
+IMG_0744.MOV,order_letter,Which gesture does the person make last? A) thumbs up B) peace sign C) thumbs down D) open palm. Answer with the letter.,a|b|c|d,d
+IMG_0744.MOV,order_letter,Which gesture does the person make last? A) open palm B) thumbs down C) peace sign D) thumbs up. Answer with the letter.,a|b|c|d,a
+IMG_0744.MOV,order_letter,Which gesture comes right after the peace sign? A) thumbs up B) thumbs down C) open palm. Answer with the letter.,a|b|c,b
+IMG_0744.MOV,order_letter,Which gesture comes right after the peace sign? A) open palm B) thumbs up C) thumbs down. Answer with the letter.,a|b|c,c
+IMG_0744.MOV,order_open,What is the first hand gesture the person makes? Answer in two words.,up|peace|down|palm,up
+IMG_0744.MOV,order_open,What is the last hand gesture the person makes? Answer in two words.,up|peace|down|palm,palm
+IMG_0746.MOV,action,Does the person hold up four fingers? Answer yes or no.,yes|no,yes
+IMG_0746.MOV,action,Does the person raise a hand? Answer yes or no.,yes|no,yes
+IMG_0746.MOV,action,Does the person give a thumbs up? Answer yes or no.,yes|no,no
+IMG_0746.MOV,action,Does the person hold up two fingers? Answer yes or no.,yes|no,no
+IMG_0746.MOV,count,How many fingers does the person hold up? Answer with a number.,0|1|2|3|4|5|6,4
+IMG_0746.MOV,start_end,Is the person's hand raised at the end of the video? Answer yes or no.,yes|no,no
+IMG_0747.MOV,action,Does the person give a thumbs up? Answer yes or no.,yes|no,yes
+IMG_0747.MOV,action,Does the person give a thumbs down? Answer yes or no.,yes|no,yes
+IMG_0747.MOV,action,Does the person show a peace sign? Answer yes or no.,yes|no,no
+IMG_0747.MOV,count,How many different hand gestures does the person make? Answer with a number.,0|1|2|3|4|5|6,2
+IMG_0747.MOV,order_letter,Which gesture does the person make first? A) thumbs up B) thumbs down. Answer with the letter.,a|b,a
+IMG_0747.MOV,order_letter,Which gesture does the person make first? A) thumbs down B) thumbs up. Answer with the letter.,a|b,b
+IMG_0747.MOV,order_named,Does the person give a thumbs up or a thumbs down first? Answer up or down.,up|down,up
+IMG_0747.MOV,order_named,Does the person give a thumbs down or a thumbs up first? Answer down or up.,down|up,up
+IMG_0747.MOV,order_open,What is the first hand gesture the person makes? Answer in two words.,up|down,up
+IMG_0747.MOV,order_open,What is the last hand gesture the person makes? Answer in two words.,up|down,down
+IMG_0748.MOV,presence,Is there a water bottle in the video? Answer yes or no.,yes|no,yes
+IMG_0748.MOV,presence,Is there a banana in the video? Answer yes or no.,yes|no,no
+IMG_0748.MOV,action,Did I take the cap off the bottle? Answer yes or no.,yes|no,yes
+IMG_0748.MOV,action,Did I drink from the bottle? Answer yes or no.,yes|no,no
+IMG_0748.MOV,action,Did I pour water out of the bottle? Answer yes or no.,yes|no,no
+IMG_0748.MOV,start_end,Is the cap on the bottle at the start of the video? Answer yes or no.,yes|no,yes
+IMG_0748.MOV,start_end,Is the cap on the bottle at the end of the video? Answer yes or no.,yes|no,no
+IMG_0748.MOV,order_letter,What did I do to the bottle? A) took the cap off B) put the cap on. Answer with the letter.,a|b,a
+IMG_0748.MOV,order_letter,What did I do to the bottle? A) put the cap on B) took the cap off. Answer with the letter.,a|b,b
+IMG_0748.MOV,order_named,Did I open the bottle or close the bottle? Answer open or close.,open|close,open
+IMG_0748.MOV,order_named,Did I close the bottle or open the bottle? Answer close or open.,close|open,open
+IMG_0749.MOV,action,Does the hand show five fingers? Answer yes or no.,yes|no,yes
+IMG_0749.MOV,action,Does the hand show three fingers? Answer yes or no.,yes|no,yes
+IMG_0749.MOV,action,Does the hand show one finger? Answer yes or no.,yes|no,no
+IMG_0749.MOV,action,Does the hand make a fist? Answer yes or no.,yes|no,no
+IMG_0749.MOV,start_end,How many fingers are held up at the start of the video? Answer with a number.,0|1|2|3|4|5|6,5
+IMG_0749.MOV,start_end,How many fingers are held up at the end of the video? Answer with a number.,0|1|2|3|4|5|6,3
+IMG_0749.MOV,order_letter,How does the number of raised fingers change? A) it goes down B) it goes up. Answer with the letter.,a|b,a
+IMG_0749.MOV,order_letter,How does the number of raised fingers change? A) it goes up B) it goes down. Answer with the letter.,a|b,b
+IMG_0749.MOV,order_named,Is the hand counting up or counting down? Answer up or down.,up|down,down
+IMG_0749.MOV,order_named,Is the hand counting down or counting up? Answer down or up.,down|up,down
+IMG_0751.MOV,presence,Is there a credit card in the video? Answer yes or no.,yes|no,yes
+IMG_0751.MOV,presence,Is there a gold card in the video? Answer yes or no.,yes|no,yes
+IMG_0751.MOV,presence,Is there a green card in the video? Answer yes or no.,yes|no,no
+IMG_0751.MOV,action,Is a card added to the table? Answer yes or no.,yes|no,yes
+IMG_0751.MOV,action,Is a card removed from the table? Answer yes or no.,yes|no,no
+IMG_0751.MOV,count,How many cards are added to the table? Answer with a number.,0|1|2|3|4|5|6,2
+IMG_0751.MOV,start_end,How many cards are on the table at the start of the video? Answer with a number.,0|1|2|3|4|5|6,2
+IMG_0751.MOV,start_end,How many cards are on the table at the end of the video? Answer with a number.,0|1|2|3|4|5|6,4
+IMG_0751.MOV,order_letter,What happens to the cards on the table? A) cards are added B) cards are removed. Answer with the letter.,a|b,a
+IMG_0751.MOV,order_letter,What happens to the cards on the table? A) cards are removed B) cards are added. Answer with the letter.,a|b,b
+IMG_0751.MOV,order_named,Does the number of cards on the table go up or down? Answer up or down.,up|down,up
+IMG_0751.MOV,order_named,Does the number of cards on the table go down or up? Answer down or up.,down|up,up
+IMG_0752.MOV,presence,Is there a water bottle in the video? Answer yes or no.,yes|no,yes
+IMG_0752.MOV,presence,Is there a wallet in the video? Answer yes or no.,yes|no,yes
+IMG_0752.MOV,presence,Is there a banana in the video? Answer yes or no.,yes|no,no
+IMG_0752.MOV,action,Did I pick up the water bottle? Answer yes or no.,yes|no,yes
+IMG_0752.MOV,action,Did I pick up the wallet? Answer yes or no.,yes|no,yes
+IMG_0752.MOV,action,Did I pick up the keyboard? Answer yes or no.,yes|no,no
+IMG_0752.MOV,count,How many objects did I pick up? Answer with a number.,1|2|3,2
+IMG_0752.MOV,order_letter,Which object did I pick up first? A) wallet B) water bottle. Answer with the letter.,a|b,b
+IMG_0752.MOV,order_letter,Which object did I pick up first? A) water bottle B) wallet. Answer with the letter.,a|b,a
+IMG_0752.MOV,order_named,"Which object did I pick up first, the wallet or the water bottle?",wallet|bottle,bottle
+IMG_0752.MOV,order_named,"Which object did I pick up first, the water bottle or the wallet?",bottle|wallet,bottle
+IMG_0752.MOV,order_open,What object did I pick up first? Answer in a few words.,wallet|bottle,bottle
+IMG_0752.MOV,order_open,What object did I pick up last? Answer in a few words.,wallet|bottle,wallet
