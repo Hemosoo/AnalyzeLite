@@ -8,8 +8,6 @@ import os
 import re
 from statistics import mean
 
-import torch
-
 from infer import ask, load
 
 NUMBERS = {"zero": "0", "one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6"}
@@ -41,14 +39,13 @@ def main():
     rows = []
     with open(args.out_csv, "w", newline="") as f:
         for n in args.frames:
-            torch.mps.empty_cache()  # so the allocator size below reflects this budget's peak
             for q in questions:
-                output, meta, t_sample, t_total = ask(model, processor, clip(q), q["question"], n)
+                output, meta, t_sample, t_total, peak_gb = ask(model, processor, clip(q), q["question"], n)
                 pred = score(output, q["choices"])
                 rows.append(row := {
                     **q, "budget": n, "frames": len(meta.timestamps), "output": output, "pred": pred,
                     "correct": int(pred == q["answer"]), "sampling_s": round(t_sample, 3), "latency_s": round(t_total, 3),
-                    "mps_gb": round(torch.mps.driver_allocated_memory() / 2**30, 2),
+                    "gpu_peak_gb": round(peak_gb, 2),
                 })
                 if len(rows) == 1:
                     w = csv.DictWriter(f, fieldnames=row.keys())
@@ -61,7 +58,7 @@ def main():
         rs = [r for r in rows if r["budget"] == n]
         first_choice = mean(r["choices"].split("|")[0] == r["answer"] for r in rs)
         print(f"\n{n} frames: accuracy {mean(r['correct'] for r in rs):.0%} (always-first-choice {first_choice:.0%}) | "
-              f"latency {mean(r['latency_s'] for r in rs):.2f}s | MPS mem {max(r['mps_gb'] for r in rs):.2f} GB")
+              f"latency {mean(r['latency_s'] for r in rs):.2f}s | GPU peak {max(r['gpu_peak_gb'] for r in rs):.2f} GB")
         for t in sorted({r["type"] for r in rs}):
             tr = [r for r in rs if r["type"] == t]
             print(f"  {t:13s} {mean(r['correct'] for r in tr):4.0%}  ({len(tr)} questions)")

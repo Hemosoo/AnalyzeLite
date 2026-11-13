@@ -14,6 +14,8 @@ uv run infer.py path/to/clip.mov "Was the drawer opened and then closed? Answer 
 
 It prints the answer, the timestamps of the sampled frames, and end-to-end latency (including frame sampling) plus memory.
 
+Run `uv run infer.py` with no question to keep the model loaded and ask questions one after another. Press Enter at the video prompt to reuse the last clip, or drag a new file into the terminal.
+
 ## Evaluate
 
 ```

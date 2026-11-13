@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 import torch
 
-from infer import sample_uniform
+from infer import DEVICE, load, sample_uniform
 from run_eval import score
 
 assert score("The wallet, then the can.", "can|wallet") == "wallet"  # first mention wins
@@ -27,4 +27,12 @@ with tempfile.TemporaryDirectory() as d:
     assert np.allclose(video.mean(axis=(1, 2, 3)), np.array(meta.frames_indices) * 2, atol=3)
 
 assert torch.isin(torch.tensor([1, 5, 9], device="mps"), torch.tensor([5, 9], device="mps")).tolist() == [False, True, True]
+
+# encoding frames one at a time gives the same features as encoding them all at once (loads the model, ~10 s)
+model, _ = load()
+pixels = torch.randn(1, 4, 3, 512, 512, device=DEVICE)
+all_at_once = type(model.model).get_image_features(model.model, pixels).pooler_output[0]
+one_by_one = model.model.get_image_features(pixels).pooler_output[0]
+assert one_by_one.shape == all_at_once.shape == (4 * 64, model.config.text_config.hidden_size)
+assert torch.allclose(one_by_one, all_at_once, atol=1e-3), (one_by_one - all_at_once).abs().max()
 print("ok")
